@@ -6,7 +6,7 @@ source /etc/profile
 
 function Start {
     echo -e " [Intro] One-Click Unlock Stream Media Script By Cloudflare-WARP"
-    echo -e " [Intro] OpenSource-Project:https://github.com/acacia233/Project-WARP-Unlock"
+    echo -e " [Intro] OpenSource-Project:https://github.com/LoliStudio/Project-WARP-Unlock"
     echo -e " [Intro] Telegram Channel:https://t.me/cutenicobest"
     echo -e " [Intro] Version:2021-11-03-1"
     echo -e " [Intro] Require Kernel Version > 5.6,Press Ctrl + C to exit..."
@@ -23,16 +23,16 @@ function Check_System_Depandencies {
 }
 
 function Download_Profile {
-    wget -qO /etc/dnsmasq.d/warp.conf https://raw.githubusercontent.com/acacia233/Project-WARP-Unlock/main/dnsmasq/warp.conf
-    wget -qO /etc/wireguard/up https://raw.githubusercontent.com/acacia233/Project-WARP-Unlock/main/scripts/up
-    wget -qO /etc/wireguard/down https://raw.githubusercontent.com/acacia233/Project-WARP-Unlock/main/scripts/down
+    wget -qO /etc/dnsmasq.d/warp.conf https://raw.githubusercontent.com/LoliStudio/Project-WARP-Unlock/main/dnsmasq/warp.conf
+    wget -qO /etc/wireguard/up https://raw.githubusercontent.com/LoliStudio/Project-WARP-Unlock/main/scripts/up
+    wget -qO /etc/wireguard/down https://raw.githubusercontent.com/LoliStudio/Project-WARP-Unlock/main/scripts/down
     chmod +x /etc/wireguard/up
     chmod +x /etc/wireguard/down
 }
 
 function Generate_WireGuard_WARP_Profile {
     echo -e " [Info] Generating WARP Profile,Please Wait..."
-    wget -qO /etc/wireguard/wgcf https://github.com/ViRb3/wgcf/releases/download/v2.2.8/wgcf_2.2.8_linux_amd64
+    wget -qO /etc/wireguard/wgcf https://github.com/ViRb3/wgcf/releases/download/v2.2.11/wgcf_2.2.8_linux_amd64
     chmod +x /etc/wireguard/wgcf
     /etc/wireguard/wgcf register --accept-tos --config /etc/wireguard/wgcf-account.toml >/dev/null 2>&1
     sleep 10
@@ -83,7 +83,6 @@ function Check_finished {
         echo -e " [Error] Routing is not correct,Please check manually!"
     else
         echo -e " [Info] Routing is working normally,Enjoy~"
-        echo -e " [Sponsor] USDT-TRC20:TCXfFzEQ7s968s4XiWzjNGdjuuew3CzLiF"
     fi
 }
 

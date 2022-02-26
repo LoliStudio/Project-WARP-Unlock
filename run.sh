@@ -32,7 +32,7 @@ function Download_Profile {
 
 function Generate_WireGuard_WARP_Profile {
     echo -e " [Info] Generating WARP Profile,Please Wait..."
-    wget -qO /etc/wireguard/wgcf https://github.com/ViRb3/wgcf/releases/download/v2.2.11/wgcf_2.2.8_linux_amd64
+    wget -qO /etc/wireguard/wgcf https://github.com/ViRb3/wgcf/releases/download/v2.2.11/wgcf_2.2.11_linux_amd64
     chmod +x /etc/wireguard/wgcf
     /etc/wireguard/wgcf register --accept-tos --config /etc/wireguard/wgcf-account.toml >/dev/null 2>&1
     sleep 10
